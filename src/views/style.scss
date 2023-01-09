@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 900px;
+  margin: auto;
+  .wallet-info {
+    padding: 12px;
+    font-size: 18px;
+  }
+  .project-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .project-details {
+    border: white 1px solid;
+    max-width: 300px;
+    padding: 16px;
+    margin: 32px;
+  }
+}
