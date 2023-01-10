@@ -1,0 +1,26 @@
+.listing {
+  display: flex;
+  padding: 32px;
+  flex-wrap: wrap;
+  .content {
+    h2, p {
+      text-align: left;
+    }
+  }
+  .contentBase {
+    h2, p {
+      color: #0B323B;
+    }
+  }
+
+  .decoratorStyle {
+    margin: 6px 0px;
+    width: 82px;
+    height: 23px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

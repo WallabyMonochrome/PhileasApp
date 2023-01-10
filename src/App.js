@@ -1,15 +1,15 @@
-import { getDefaultProvider } from 'ethers'
-import { publicProvider } from 'wagmi/providers/public'
-import { jsonRpcProvider } from '@wagmi/core/providers/jsonRpc'
-import { alchemyProvider } from '@wagmi/core/providers/alchemy'
+import {getDefaultProvider} from 'ethers'
+import {publicProvider} from 'wagmi/providers/public'
+import {jsonRpcProvider} from '@wagmi/core/providers/jsonRpc'
+import {alchemyProvider} from '@wagmi/core/providers/alchemy'
+import {InjectedConnector} from '@wagmi/core/connectors/injected'
+import {configureChains} from 'wagmi'
+import Router from "./Router";
 
-import { InjectedConnector } from '@wagmi/core/connectors/injected'
-import { configureChains } from 'wagmi'
-
-import { localhost, mainnet, polygon } from 'wagmi/chains'
+import {localhost, mainnet, polygon} from 'wagmi/chains'
 
 
-import { WagmiConfig, createClient } from 'wagmi'
+import {WagmiConfig, createClient} from 'wagmi'
 import './App.css';
 import Dashboard from "views/Dashboard";
 
@@ -35,16 +35,14 @@ const client = createClient({
     [alchemyProvider({ apiKey: 'yourAlchemyApiKey' }), publicProvider()],
 )*/
 
-const { chains, provider } = configureChains(
+const {chains, provider} = configureChains(
     [localhost],
-    [ jsonRpcProvider({
+    [jsonRpcProvider({
         rpc: (chain) => ({
             http: `http://127.0.0.1:8545`,
         }),
     }),],
 )
-
-console.log('loca', chains, provider);
 
 const client = createClient({
     autoConnect: true,
@@ -53,15 +51,16 @@ const client = createClient({
 
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-          <WagmiConfig client={client}>
-         <Dashboard />
-          </WagmiConfig>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <header className="App-header">
+                <WagmiConfig client={client}>
+                    {/*<Dashboard />*/}
+                    <Router/>
+                </WagmiConfig>
+            </header>
+        </div>
+    );
 }
 
 export default App;
