@@ -2,8 +2,9 @@
 
 ## How to run
 
-*npm i*
-*npm run start*
+``npm i``
+
+``npm run start ``
 
 ## How to test
 For testing purposes, deploy your contracts using the deployment script in the Philea-MVP smart contract repository and replace the file in src>asset>contracts.json with your deployed  contracts.
