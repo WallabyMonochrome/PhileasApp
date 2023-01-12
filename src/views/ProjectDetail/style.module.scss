@@ -1,0 +1,26 @@
+.container {
+  color: #21454D;
+  padding: 42px;
+  .content {
+    text-align: left;
+    padding: 64px;
+  }
+  .actions {
+    input {
+      width: 300px;
+      height: 32px;
+      padding-left: 16px;
+    }
+    display: flex;
+    gap: 32px;
+  }
+  .polygonSize {
+    width: 316px;
+    height: 290px;
+  }
+  .headerTitle {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}

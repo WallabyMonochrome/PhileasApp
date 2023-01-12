@@ -1,7 +1,9 @@
 .listing {
+  color: #0B323B;
   display: flex;
   padding: 32px;
   flex-wrap: wrap;
+  justify-content: center;
   .content {
     h2, p {
       text-align: left;

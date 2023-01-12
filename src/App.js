@@ -6,40 +6,18 @@ import {InjectedConnector} from '@wagmi/core/connectors/injected'
 import {configureChains} from 'wagmi'
 import Router from "./Router";
 
-import {localhost, mainnet, polygon} from 'wagmi/chains'
+import {localhost, sepolia} from 'wagmi/chains'
 
 
 import {WagmiConfig, createClient} from 'wagmi'
 import './App.css';
-import Dashboard from "views/Dashboard";
-
-/*const { chains, provider } = configureChains(
-    [localhost],
-    [
-        jsonRpcProvider({
-            rpc: (chain) => ({
-                http: `http://127.0.0.1:8545`,
-            }),
-        }),
-    ],
-)
-
-const client = createClient({
-    autoConnect: true,
-    connectors: [new InjectedConnector({ chains })],
-    provider,
-})*/
-
-/*const { chains, provider } = configureChains(
-    [mainnet, polygon],
-    [alchemyProvider({ apiKey: 'yourAlchemyApiKey' }), publicProvider()],
-)*/
 
 const {chains, provider} = configureChains(
-    [localhost],
+    [localhost, sepolia],
     [jsonRpcProvider({
         rpc: (chain) => ({
-            http: `http://127.0.0.1:8545`,
+            // http: `http://127.0.0.1:8545`,
+            http: `https://sepolia.infura.io/v3/cd8059a535eb471c88322a32c43d7f6e`,
         }),
     }),],
 )
@@ -55,7 +33,6 @@ function App() {
         <div className="App">
             <header className="App-header">
                 <WagmiConfig client={client}>
-                    {/*<Dashboard />*/}
                     <Router/>
                 </WagmiConfig>
             </header>

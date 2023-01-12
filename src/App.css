@@ -1,14 +1,13 @@
 .App {
   text-align: center;
+  font-family: 'Avenir Next';
 }
 
 .App-header {
-  background-color: #0B323B;
   background: url("asset/background.svg");
   background-attachment: fixed;
   min-height: 100vh;
   font-size: 22px;
-  color: white;
 }
 
 h1, h2, h3 {
